@@ -841,10 +841,10 @@ hr_icon:
 # Typewriter Effect
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
-  enable: false
+  enable: true
   colorful: true
-  shake: true
-  mobile: false
+  shake: false
+  mobile: true
 
 # Background effects
 # --------------------------------------
@@ -904,11 +904,6 @@ clickShowText:
   random: true
   mobile: true
 
-# Acitivate Power Mode
-activate_power_mode:
-  enable: true
-  colorful: true
-  shake: false 
 
 # --------------------------------------
 # Lightbox Settings
