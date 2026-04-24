@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: 温水wind的空间
+subtitle: '温水予风_'
+description: '世界温柔以待'
 keywords:
-author: John Doe
-language: en
+author: 温水wind
+language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://space.bilibili.com/1448050897
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
