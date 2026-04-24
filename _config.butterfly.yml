@@ -438,7 +438,7 @@ wordcount:
   total_wordcount: true
 
 # Busuanzi count for PV / UV in site
-busuanzi:
+Busuanzi:
   site_uv: true
   site_pv: true
   page_pv: true
@@ -711,13 +711,6 @@ umami_analytics:
     # Umami Cloud (API key) / self-hosted Umami (token)
     token:
 
-# Busuanzi
-busuanzi:
-  enable: true
-  UV_PV:
-    site_uv: true
-    site_pv: true
-    page_pv: true
 
 # https://www.googletagmanager.com/
 google_tag_manager:
