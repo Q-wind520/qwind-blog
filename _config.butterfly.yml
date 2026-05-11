@@ -56,7 +56,7 @@ social:
 favicon: /img/favicon.png
 
 avatar:
-  img: source/img/qwind.jpg
+  img: /img/qwind.jpg
   effect: false
 
 # Disable all banner images
@@ -66,7 +66,7 @@ disable_top_img: false
 default_top_img:
 
 # The banner image of index page
-index_img: /source/img/alona_nav.png
+index_img: /img/alona_nav.png
 
 # The banner image of archive page
 archive_img:
