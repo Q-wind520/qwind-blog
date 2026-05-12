@@ -1,4 +1,5 @@
 ---
 title: archives
 date: 2026-05-12 11:30:17
+type: "archives"
 ---
