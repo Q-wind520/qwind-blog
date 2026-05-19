@@ -68,10 +68,10 @@ disable_top_img: false
 default_top_img:
 
 # 首页的横幅图片
-index_img: /img/alona_nav.png
+index_img: /img/BA.png
 
 # 归档页的横幅图片
-archive_img: /img/alona_nav.png
+archive_img: /img/BA.png
 
 # 注意：单个标签页面，不是标签总览页
 tag_img: /img/alona_nav.png
