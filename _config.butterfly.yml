@@ -55,7 +55,7 @@ social:
 # Image Settings 图像
 # --------------------------------------
 
-favicon: /img/qwind.jpg
+favicon: /img/qwind.png
 
 avatar:
   img: /img/qwind.jpg
@@ -74,7 +74,7 @@ index_img: /img/BA.png
 archive_img: /img/BA.png
 
 # 注意：单个标签页面，不是标签总览页
-tag_img: /img/alona_nav.png
+tag_img: /img/BA.png
 
 # 标签页的横幅图片，可为每个标签单独设置横幅图片
 # 格式:
@@ -82,7 +82,7 @@ tag_img: /img/alona_nav.png
 tag_per_img:
 
 # 注意：单个分类页面，不是分类总览页
-category_img:
+category_img: /img/BA.png
 
 # 分类页的横幅图片，可为每个分类单独设置横幅图片
 # 格式:
@@ -105,7 +105,8 @@ cover:
   aside_enable: true
   archives_enable: true
   # 当未设置封面时，显示默认封面
-  default_cover:
+  default_cover: 
+    - /img/1.png
 
 # 替换损坏的图片
 error_img:
@@ -114,7 +115,7 @@ error_img:
 
 # 简单的404页面
 error_404:
-  enable: false
+  enable: true
   subtitle: 'Page Not Found'
   background: /img/error-page.png
 
@@ -266,7 +267,7 @@ footer:
   # 主题和框架的版权信息
   copyright:
     enable: true
-    version: true
+    version: false
   custom_text:
 
 # --------------------------------------
