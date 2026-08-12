@@ -68,13 +68,13 @@ disable_top_img: false
 default_top_img:
 
 # 首页的横幅图片
-index_img: /img/BA.png
+index_img: /img/早濑优香.png
 
 # 归档页的横幅图片
-archive_img: /img/BA.png
+archive_img: /img/早濑优香.png
 
 # 注意：单个标签页面，不是标签总览页
-tag_img: /img/BA.png
+tag_img: /img/早濑优香.png
 
 # 标签页的横幅图片，可为每个标签单独设置横幅图片
 # 格式:
@@ -82,7 +82,7 @@ tag_img: /img/BA.png
 tag_per_img:
 
 # 注意：单个分类页面，不是分类总览页
-category_img: /img/BA.png
+category_img: /img/早濑优香.png
 
 # 分类页的横幅图片，可为每个分类单独设置横幅图片
 # 格式:
@@ -96,7 +96,7 @@ footer_img: false
 # 可设置为颜色、图片URL或包含颜色和/或图片URL的数组
 # 如果设置为数组，每次加载时会从数组中随机选择一个背景
 background: [
-  /img/alona_nav.png
+  /img/早濑优香.png
 ]
 
 cover:
@@ -106,7 +106,7 @@ cover:
   archives_enable: true
   # 当未设置封面时，显示默认封面
   default_cover: 
-    - /img/1.png
+    - /img/柚鸟夏.jpg
 
 # 替换损坏的图片
 error_img:
@@ -384,7 +384,7 @@ readmode: true
 
 # 暗色模式
 darkmode:
-  enable: true
+  enable: false
   # 切换暗色/亮色模式的按钮
   button: true
   # 自动切换暗色/亮色模式
@@ -1066,7 +1066,16 @@ css_prefix: true
 # 将代码插入到 head（'</head>' 标签之前）和底部（'</body>' 标签之前）
 inject:
   head:
-    # - <link rel="stylesheet" href="/xxx.css">
+    - |
+      <style>
+        #footer {
+          background: rgba(0, 0, 0, 0.35) !important;
+          -webkit-backdrop-filter: blur(12px) saturate(140%);
+          backdrop-filter: blur(12px) saturate(140%);
+          border-top: 1px solid rgba(255, 255, 255, .15);
+          box-shadow: 0 -4px 24px rgba(0, 0, 0, .08);
+        }
+      </style>
   bottom:
     # - <script src="xxxx"></script>
 
