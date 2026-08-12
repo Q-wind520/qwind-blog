@@ -178,7 +178,7 @@ subtitle:
 # 5: 信息显示在封面上
 # 6: 瀑布流布局 - 封面在上，信息在下
 # 7: 瀑布流布局 - 信息显示在封面上
-index_layout: 3
+index_layout: 1
 
 # 在首页显示文章简介
 # 1: 描述
@@ -384,7 +384,7 @@ readmode: true
 
 # 暗色模式
 darkmode:
-  enable: false
+  enable: true
   # 切换暗色/亮色模式的按钮
   button: true
   # 自动切换暗色/亮色模式
@@ -763,7 +763,7 @@ site_verification:
 
 theme_color:
   enable: true
-  main: "#49B1F5"
+  main: "#fda1a0"
   paginator: "#00c4b6"
   button_hover: "#FF7242"
   text_selection: "#00c4b6"
@@ -773,9 +773,9 @@ theme_color:
   code_foreground: "#F47466"
   code_background: "rgba(27, 31, 35, .05)"
   toc_color: "#00c4b6"
-  blockquote_padding_color: "#49b1f5"
-  blockquote_background_color: "#49b1f5"
-  scrollbar_color: "#49b1f5"
+  blockquote_padding_color: "#fda1a0"
+  blockquote_background_color: "#fda1a0"
+  scrollbar_color: "#fda1a0"
   meta_theme_color_light: "ffffff"
   meta_theme_color_dark: "#0d0d0d"
 
@@ -810,7 +810,7 @@ preloader:
 enter_transitions: true
 
 # 默认显示模式 - light（亮色，默认）/ dark（暗色）
-display_mode: dark
+display_mode: light
 
 # 文章内容美化配置
 beautify:
@@ -1009,7 +1009,7 @@ snackbar:
   enable: false
   position: bottom-left
   # 亮色模式和暗色模式下吐司通知的背景颜色
-  bg_light: '#49b1f5'
+  bg_light: '#fda1a0'
   bg_dark: '#1f1f1f'
 
 # Instant.page
