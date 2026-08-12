@@ -168,7 +168,7 @@ subtitle:
   # 3 - jinrishici.com
   source: false
   # 如果关闭打字机效果，副标题将只显示 sub 的第一行
-  sub: 欢迎访问温水wind的空间 | 愿温柔与你同在
+  sub: 歡迎访问温水wind的空間 | 愿温柔与你同在
 
 # 首页文章布局
 # 1: 封面在左，信息在右
@@ -764,19 +764,19 @@ site_verification:
 theme_color:
   enable: true
   main: "#fda1a0"
-  paginator: "#00c4b6"
-  button_hover: "#FF7242"
-  text_selection: "#00c4b6"
-  link_color: "#99a9bf"
+  paginator: "#f37c8c"
+  button_hover: "#f0808c"
+  text_selection: "#f37c8c"
+  link_color: "#c05a7a"
   meta_color: "#858585"
-  hr_color: "#A4D8FA"
-  code_foreground: "#F47466"
-  code_background: "rgba(27, 31, 35, .05)"
-  toc_color: "#00c4b6"
+  hr_color: "#f7c9c8"
+  code_foreground: "#e0567a"
+  code_background: "rgba(224, 86, 122, .05)"
+  toc_color: "#f37c8c"
   blockquote_padding_color: "#fda1a0"
-  blockquote_background_color: "#fda1a0"
+  blockquote_background_color: "#fde9e8"
   scrollbar_color: "#fda1a0"
-  meta_theme_color_light: "ffffff"
+  meta_theme_color_light: "fff0ef"
   meta_theme_color_dark: "#0d0d0d"
 
 # 分类和标签页面的用户界面设置
@@ -793,8 +793,8 @@ text_align_justify: false
 
 # 为页眉和页脚添加遮罩
 mask:
-  header: true
-  footer: true
+  header: false
+  footer: false
 
 # 加载动画
 preloader:
@@ -802,7 +802,7 @@ preloader:
   # 来源
   # 1. fullpage-loading（全屏加载）
   # 2. pace（进度条）
-  source: 1
+  source: 2
   # pace 主题（参见 https://codebyzach.github.io/pace/）
   pace_css_url:
 
@@ -825,15 +825,15 @@ beautify:
 # 全局字体设置
 # 除非你了解其工作原理，否则不要修改以下设置
 font:
-  global_font_size:
+  global_font_size: 15px
   code_font_size:
-  font_family:
-  code_font_family:
+  font_family: 'LXGW WenKai, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif'
+  code_font_family: 'LXGW WenKai Mono, "JetBrains Mono", Consolas, Monaco, monospace'
 
 # 站点标题和副标题的字体设置
 blog_title_font:
-  font_link:
-  font_family:
+  font_link: https://cdn.jsdelivr.net/npm/@fontsource/huninn@5.3.0/index.css
+  font_family: 'Huninn'
 
 # 分隔线图标设置
 hr_icon:
@@ -1066,6 +1066,7 @@ css_prefix: true
 # 将代码插入到 head（'</head>' 标签之前）和底部（'</body>' 标签之前）
 inject:
   head:
+    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
     - |
       <style>
         #footer {
@@ -1074,6 +1075,23 @@ inject:
           backdrop-filter: blur(12px) saturate(140%);
           border-top: 1px solid rgba(255, 255, 255, .15);
           box-shadow: 0 -4px 24px rgba(0, 0, 0, .08);
+        }
+        #nav {
+          background: rgba(0, 0, 0, 0.25) !important;
+          -webkit-backdrop-filter: blur(12px) saturate(140%);
+          backdrop-filter: blur(12px) saturate(140%);
+          border-bottom: 1px solid rgba(255, 255, 255, .12);
+        }
+        #nav a,
+        #nav span.site-page,
+        #nav .site-name,
+        #nav #blog-info {
+          color: #fff !important;
+          text-shadow: 0 1px 4px rgba(0, 0, 0, .35);
+        }
+        #nav a:hover,
+        #nav span.site-page:hover {
+          color: #fff !important;
         }
       </style>
   bottom:
