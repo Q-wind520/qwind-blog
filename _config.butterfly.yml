@@ -24,6 +24,7 @@ menu:
   分类: /categories/ || fas fa-folder-open
   友链: /link/ || fas fa-link
   关于: /about/ || fas fa-heart
+  RSS订阅: /atom.xml || fas fa-rss-square
 
 # --------------------------------------
 # Code Blocks Settings 代码块
@@ -168,7 +169,7 @@ subtitle:
   # 3 - jinrishici.com
   source: false
   # 如果关闭打字机效果，副标题将只显示 sub 的第一行
-  sub: 歡迎访问温水wind的空間 | 愿温柔与你同在
+  sub: 歡迎訪問温水wind的空間 | 愿温柔与你同在
 
 # 首页文章布局
 # 1: 封面在左，信息在右
