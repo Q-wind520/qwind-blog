@@ -2,6 +2,9 @@
 title: "Pop!_OS很好用！"
 date: 2026-8-7 23:52:45
 tag: [Linux, Pop!_OS, 使用体验]
+# top_img: /img/Pop-OSexp/pop-os%20logo.webp
+cover: /img/Pop-OSexp/pop-os%20logo.webp
+cover_type: img
 ---
 
 ## COSMIC桌面基本满足我所有美化想象

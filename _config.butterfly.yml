@@ -169,7 +169,10 @@ subtitle:
   # 3 - jinrishici.com
   source: false
   # 如果关闭打字机效果，副标题将只显示 sub 的第一行
-  sub: 歡迎訪問温水wind的空間 | 愿温柔与你同在
+  sub: 
+    - 歡迎訪問温水wind的空間 
+    - 愿温柔与你同在
+    - 逆流河上万仙退，爱情不敵堅持泪
 
 # 首页文章布局
 # 1: 封面在左，信息在右
@@ -293,7 +296,7 @@ aside:
     button:
       enable: true
       icon: fab fa-github
-      text: 关注我
+      text: GitHub
       link: https://github.com/Q-wind520
   card_announcement:
     enable: true
@@ -795,7 +798,7 @@ text_align_justify: false
 
 # 为页眉和页脚添加遮罩
 mask:
-  header: false
+  header: true
   footer: false
 
 # 加载动画
@@ -1094,6 +1097,13 @@ inject:
         #nav a:hover,
         #nav span.site-page:hover {
           color: #fff !important;
+        }
+      </style>
+    - |
+      <style>
+        /* 去除首页横幅遮罩（文章页等其他页面保留） */
+        #page-header.full_page:before {
+          display: none;
         }
       </style>
   bottom:
