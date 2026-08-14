@@ -538,7 +538,7 @@ comments:
   # 如果不需要评论请留空
   # 选择: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   # 两个评论系统的格式: Disqus,Waline
-  use:
+  use: Giscus
   # 在按钮旁边显示评论名称
   text: true
   # 懒加载：当评论元素进入浏览器视口时才会加载评论系统
@@ -635,13 +635,14 @@ twikoo:
 # Giscus
 # https://giscus.app/
 giscus:
-  repo:
-  repo_id:
-  category_id:
+  repo: Q-wind520/qwind-blog
+  repo_id: R_kgDOSKgJDg
+  category_id: DIC_kwDOSKgJDs4DDWQ4
   light_theme: light
   dark_theme: dark
   js:
   option:
+    data-lang: zh-CN
 
 # Remark42
 # https://remark42.com/docs/configuration/frontend/
