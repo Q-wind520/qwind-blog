@@ -19,7 +19,7 @@ nav:
 
 menu:
   首页: / || fas fa-home
-  归档: /archives/ || fas fa-archive
+  歸档: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
   友链: /link/ || fas fa-link
@@ -66,16 +66,16 @@ avatar:
 disable_top_img: false
 
 # 如果页面未设置横幅，将显示默认顶部图片
-default_top_img:
+default_top_img: /img/阿洛娜.png
 
 # 首页的横幅图片
 index_img: /img/早濑优香.png
 
 # 归档页的横幅图片
-archive_img: /img/早濑优香.png
+archive_img: 
 
 # 注意：单个标签页面，不是标签总览页
-tag_img: /img/早濑优香.png
+tag_img: 
 
 # 标签页的横幅图片，可为每个标签单独设置横幅图片
 # 格式:
@@ -83,7 +83,7 @@ tag_img: /img/早濑优香.png
 tag_per_img:
 
 # 注意：单个分类页面，不是分类总览页
-category_img: /img/早濑优香.png
+category_img: 
 
 # 分类页的横幅图片，可为每个分类单独设置横幅图片
 # 格式:
@@ -108,6 +108,7 @@ cover:
   # 当未设置封面时，显示默认封面
   default_cover: 
     - /img/柚鸟夏.jpg
+    - /img/mika.jpg
 
 # 替换损坏的图片
 error_img:
