@@ -1107,6 +1107,20 @@ inject:
           display: none;
         }
       </style>
+    - |
+      <style>
+        /* 非首页页面背景高斯模糊（#web_bg 为固定全屏背景层），首页保持原样 */
+        #web_bg {
+          -webkit-filter: blur(4px);
+          filter: blur(4px);
+          transform: scale(1.1);
+        }
+        body:has(#page-header.full_page) #web_bg {
+          -webkit-filter: none;
+          filter: none;
+          transform: none;
+        }
+      </style>
   bottom:
     # - <script src="xxxx"></script>
 
