@@ -275,7 +275,7 @@ footer:
     version: false
   custom_text: |
     <div id="site-runtime">
-      <span class="rt-label">本站已运行</span>[ <span class="rt-num" id="rt-years">0</span> Year(s) <span class="rt-num" id="rt-days">0</span> days <span class="rt-num" id="rt-hh">00</span><span class="rt-colon">:</span><span class="rt-num" id="rt-mm">00</span><span class="rt-colon">:</span><span class="rt-num" id="rt-ss">00</span> ]
+      <span class="rt-num" id="rt-years">0</span> 年 <span class="rt-num" id="rt-days">0</span> 天 <span class="rt-num" id="rt-hh">00</span><span class="rt-colon">:</span><span class="rt-num" id="rt-mm">00</span><span class="rt-colon">:</span><span class="rt-num" id="rt-ss">00</span>
     </div>
 
 # --------------------------------------
@@ -304,7 +304,9 @@ aside:
       link: https://github.com/Q-wind520
   card_announcement:
     enable: true
-    content: 这是我的博客
+    content: |
+      <p>温水档案美化施工完毕！</p>
+      <p>欢迎来到温水档案！</p>
   card_recent_post:
     enable: true
     # 如果设置为 0 则显示全部
@@ -1083,13 +1085,37 @@ inject:
           -webkit-backdrop-filter: blur(12px) saturate(140%);
           backdrop-filter: blur(12px) saturate(140%);
           border-top: 1px solid rgba(255, 255, 255, .15);
+          border-radius: 18px 18px 0 0;
           box-shadow: 0 -4px 24px rgba(0, 0, 0, .08);
         }
-        #nav {
-          background: rgba(0, 0, 0, 0.25) !important;
+        /* 滚动到顶部时 nav 完全透明（仅限有横幅的页面，白字在图上可读） */
+        #page-header:not(.not-top-img) #nav {
+          background: transparent !important;
+          -webkit-backdrop-filter: none !important;
+          backdrop-filter: none !important;
+          border-bottom-color: transparent !important;
+          box-shadow: none !important;
+        }
+        /* 滚动后（主题自动加 .nav-fixed）恢复毛玻璃深色。
+           毛玻璃放在 ::before 上：主题给 #nav 自身加了 transform/will-change，
+           会使 #nav 上的 backdrop-filter 在 Chromium/Firefox 失效（页脚无 transform 所以正常） */
+        #page-header.nav-fixed #nav {
+          background: transparent !important;
+          transition: transform .2s ease-in-out, opacity .2s ease-in-out !important;
+        }
+        #page-header.nav-fixed #nav::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          background: rgba(0, 0, 0, 0.25);
           -webkit-backdrop-filter: blur(12px) saturate(140%);
           backdrop-filter: blur(12px) saturate(140%);
           border-bottom: 1px solid rgba(255, 255, 255, .12);
+          border-radius: 0 0 12px 12px;
         }
         #nav a,
         #nav span.site-page,
@@ -1105,9 +1131,17 @@ inject:
       </style>
     - |
       <style>
-        /* 去除首页横幅遮罩（文章页等其他页面保留） */
+        /* 首页横幅遮罩：暗色主题深色透明，亮色主题透明 */
         #page-header.full_page:before {
           display: none;
+        }
+        [data-theme='dark'] #page-header.full_page:before {
+          display: block;
+          background-color: rgba(0, 0, 0, .45);
+        }
+        /* 首页背景层遮罩：暗色改为与横幅一致的 .45（替代主题默认 .7，避免叠加变深） */
+        [data-theme='dark'] body:has(#page-header.full_page) #web_bg::before {
+          background-color: rgba(0, 0, 0, .45);
         }
       </style>
     - |
@@ -1131,15 +1165,14 @@ inject:
         #site-runtime {
           display: inline-block;
           margin-top: 6px;
-          padding: 3px 16px;
+          padding: 5px 16px;
           background: rgba(0, 0, 0, .55);
-          color: #fff;
+          color: var(--default-bg-color);
           font-family: 'Share Tech Mono', 'Courier New', Consolas, monospace;
           font-size: .95em;
           letter-spacing: 1px;
-          line-height: 1.9;
-          border: 1px solid rgba(255, 255, 255, .18);
-          border-radius: 6px;
+          line-height: 1.0;
+          border-radius: 8px;
           white-space: nowrap;
           box-shadow: 0 2px 12px rgba(0, 0, 0, .25);
           transition: border-color .3s ease, box-shadow .3s ease;
@@ -1152,16 +1185,7 @@ inject:
         }
         /* 悬停微光 */
         #site-runtime:hover {
-          border-color: rgba(255, 255, 255, .45);
           box-shadow: 0 0 16px rgba(255, 255, 255, .18), 0 2px 12px rgba(0, 0, 0, .25);
-        }
-        /* 标签前缀 */
-        .rt-label {
-          font-family: 'LXGW WenKai', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-          font-size: .8em;
-          letter-spacing: .5px;
-          color: rgba(255, 255, 255, .68);
-          margin-right: 8px;
         }
         /* 冒号闪烁 */
         .rt-colon {
@@ -1179,12 +1203,22 @@ inject:
           #site-runtime {
             font-size: .78em;
             letter-spacing: 0;
-            padding: 2px 10px;
+            padding: 4px 10px;
           }
           .rt-label {
             font-size: .8em;
             margin-right: 6px;
           }
+        }
+      </style>
+    - |
+      <style>
+        /* 卡片背景 90% 不透明度（文字保持 100% 不透明） */
+        :root {
+          --card-bg: rgba(255, 255, 255, .9);
+        }
+        [data-theme='dark'] {
+          --card-bg: rgba(18, 18, 18, .9);
         }
       </style>
   bottom:
