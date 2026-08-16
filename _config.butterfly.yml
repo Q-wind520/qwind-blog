@@ -273,7 +273,10 @@ footer:
   copyright:
     enable: true
     version: false
-  custom_text:
+  custom_text: |
+    <div id="site-runtime">
+      [ <span id="site-runtime-value">0 Year(s) 0 days 00:00:00</span> ]
+    </div>
 
 # --------------------------------------
 # Aside Settings 侧边栏设置
@@ -1121,8 +1124,55 @@ inject:
           transform: none;
         }
       </style>
+    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/share-tech-mono/index.css">
+    - |
+      <style>
+        /* 页脚网站运行时长：电子时钟风格，黑底白字 */
+        #site-runtime {
+          display: inline-block;
+          margin-top: 6px;
+          padding: 2px 14px;
+          background: #000;
+          color: #fff;
+          font-family: 'Share Tech Mono', 'Courier New', Consolas, monospace;
+          font-size: .95em;
+          letter-spacing: 1px;
+          line-height: 1.8;
+          border: 1px solid #2a2a2a;
+          border-radius: 4px;
+          white-space: nowrap;
+        }
+        #site-runtime-value {
+          text-shadow: 0 0 8px rgba(255, 255, 255, .45);
+        }
+      </style>
   bottom:
     # - <script src="xxxx"></script>
+    - |
+      <script>
+        (function () {
+          // 网站建立时间（git 首次提交 2026-04-24 09:06:20 +0800），如需调整只改这里
+          var SITE_START = new Date('2026-04-24T09:06:20+08:00').getTime()
+          function pad(n) { return n < 10 ? '0' + n : '' + n }
+          function tick() {
+            var el = document.getElementById('site-runtime-value')
+            if (!el) return
+            var s = Math.floor((Date.now() - SITE_START) / 1000)
+            if (s < 0) s = 0
+            var years = Math.floor(s / (365 * 86400))
+            s %= 365 * 86400
+            var days = Math.floor(s / 86400)
+            s %= 86400
+            var hh = pad(Math.floor(s / 3600))
+            s %= 3600
+            var mm = pad(Math.floor(s / 60))
+            var ss = pad(s % 60)
+            el.textContent = years + ' Year(s) ' + days + ' days ' + hh + ':' + mm + ':' + ss
+          }
+          tick()
+          setInterval(tick, 1000)
+        })()
+      </script>
 
 # CDN 设置
 # 除非你了解其工作原理，否则不要修改以下设置
