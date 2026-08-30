@@ -29,6 +29,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - google7d8b9e567c515d9a.html
 
 # 写作
 new_post_name: :title.md # 新文章的文件名
