@@ -5,11 +5,11 @@
 # 站点
 title: 温水档案
 subtitle: 'QwQwind Archive'
-description: 
-keywords:
-author: 温水
-language: zh-CN
-timezone: ''
+description: "温水wind的个人博客，记录生活、学习、工作、技术。包括Linux、软件开发、网络安全、开源项目等内容。"
+keywords: "温水, 博客, hexo, blog"
+author: '温水'
+language: 'zh-CN'
+timezone: 'Asia/Shanghai'
 
 # 网址
 ## 在此设置你的站点网址。例如，如果使用 GitHub Pages，请将 url 设置为 'https://username.github.io/project'
@@ -80,7 +80,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## updated_option 支持 'mtime'、'date'、'empty'
-updated_option: 'mtime'
+updated_option: 'date'
 
 # 分页
 ## 将 per_page 设为 0 以禁用分页
@@ -118,3 +118,9 @@ feed:
   icon: /img/avatar.png
   autodiscovery: true
   template:
+
+# sitemap
+sitemap:
+  path: sitemap.xml
+  tag: false
+  category: false
