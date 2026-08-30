@@ -2,10 +2,10 @@
 - class_name: [分类名称]
   class_desc: [分类描述]
   link_list:
-    - name: [NaN]
-      link: [NaN]
-      avatar: [NaN]
-      descr: [NaN]
+    - name: [钟灵雲的博客]
+      link: [https://blog.lingdone.cn/]
+      avatar: [https://blog.lingdone.cn/avatar.png]
+      descr: [記錄產品、技術於創作]
     
     # - name: [网站名称 2]
     #   link: [网站地址 2]
