@@ -1,7 +1,7 @@
 ---
 title: "本地使用Wallpaper的办法"
 date: 2026-6-9 09:14:42
-tag: [Wallpaper, 优化]
+tags: [Wallpaper, 优化]
 
 ---
 

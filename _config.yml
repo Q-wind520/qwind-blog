@@ -6,7 +6,7 @@
 title: 温水档案
 subtitle: 'QwQwind Archive'
 description: "温水wind的个人博客，记录生活、学习、工作、技术。包括Linux、软件开发、网络安全、开源项目等内容。"
-keywords: "温水, 博客, hexo, blog"
+keywords: "温水, 温水档案, Linux, Pop!_OS, 开源, 技术博客"
 author: '温水'
 language: 'zh-CN'
 timezone: 'Asia/Shanghai'
@@ -116,7 +116,7 @@ feed:
   content_limit: 140
   content_limit_delim: ' '
   order_by: -date
-  icon: /img/avatar.png
+  icon: /img/qwind.png
   autodiscovery: true
   template:
 
@@ -125,3 +125,18 @@ sitemap:
   path: sitemap.xml
   tag: false
   category: false
+
+# nofollow
+nofollow:
+  enable: true
+  field: site
+  exclude:
+
+# 主动推送搜索引擎（hexo-submit-urls-to-search-engine）
+# 推送密钥（google_key/bing_key/baidu_token）未配置前，generate 仅生成 urls.txt
+hexo_submit_urls_to_search_engine:
+  submit_condition: count
+  count: 10
+  period: 1000
+  txt_path: urls.txt
+  replace: 0

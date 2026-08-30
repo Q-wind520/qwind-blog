@@ -69,7 +69,7 @@ disable_top_img: false
 default_top_img: /img/阿洛娜.png
 
 # 首页的横幅图片
-index_img: /img/早濑优香.png
+index_img: /img/早濑优香.webp
 
 # 归档页的横幅图片
 archive_img: 
@@ -97,7 +97,7 @@ footer_img: false
 # 可设置为颜色、图片URL或包含颜色和/或图片URL的数组
 # 如果设置为数组，每次加载时会从数组中随机选择一个背景
 background: [
-  /img/早濑优香.png
+  /img/早濑优香.webp
 ]
 
 cover:
@@ -1065,7 +1065,7 @@ Open_Graph_meta:
 # 结构化数据
 # https://developers.google.com/search/docs/guides/intro-structured-data
 structured_data:
-  enable: false
+  enable: true
   # 站点的备用名称，用于结构化数据
   # 格式: ['名称1', '名称2']
   alternate_name:
