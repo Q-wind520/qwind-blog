@@ -12,35 +12,47 @@ tags: [Linux, 软件, 分享]
 
 ### APT 换源
 
-Pop!_OS 的源是 deb822 格式`/etc/apt/sources.list.d/*.sources`，直接 sed 替换主机名为镜像（上海交大，国内唯一完整镜像 Pop 源的站点）：
+**Pop!_OS 自己的源保持官方，仅把 Ubuntu 基础源换成中科大**：
 
 ```bash
-# 前两个文件是 Pop!_OS 自己的仓库，system.sources 是 Ubuntu 基础源
-sudo sed -i 's@//apt.pop-os.org/@//mirror.sjtu.edu.cn/pop-os/@g' \
-  /etc/apt/sources.list.d/pop-os-apps.sources /etc/apt/sources.list.d/pop-os-release.sources
-sudo sed -i 's@//apt.pop-os.org/@//mirror.sjtu.edu.cn/@g' \
+# 只改 system.sources 里的 Ubuntu 镜像地址，Pop 自己的两个源不动
+sudo sed -i 's@//apt.pop-os.org/ubuntu@//mirrors.ustc.edu.cn/ubuntu@g' \
   /etc/apt/sources.list.d/system.sources
 sudo apt update
 ```
 
-> 匹配 `//apt.pop-os.org/`；换源后首次 `apt update` 会重新拉取索引，稍慢属正常。
-
 ### Flatpak 换源
 
 ```bash
-# 若系统还没 flathub 源则先添加（Pop!_OS 一般已内置，可跳过）
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 # 切换下载地址到镜像
-sudo flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
+sudo flatpak remote-modify flathub --url=https://mirrors.ustc.edu.cn/flathub
 ```
 
-> 交大的 flathub 是**智能缓存**，未命中的文件会回源站拉取，首次安装大应用时仍需能连通 flathub.org；`flatpak update` 可验证是否生效。
+> 智能缓存模式，未命中回源，`flatpak update` 可验证是否生效。
 
 ### COSMIC 设置（可选）
 
 你当然可以把 **COSMIC设置** 完完整整浏览并设置一遍，这很好，我这里列几个显著提高体验的配置，包括一些GUI不包含的设置：
 
-- 
+1. **焦点跟随鼠标 / 鼠标跟随焦点 / 延迟微调**
+
+
+2. **PiP 浮动 + Steam 取消浮动**
+
+```bash
+mkdir -p ~/.config/cosmic/com.system76.CosmicSettings.WindowRules/v1
+cat > ~/.config/cosmic/com.system76.CosmicSettings.WindowRules/v1/tiling_exception_custom <<'EOF'
+[
+    (appid: "", title: "Picture in picture", enabled: true),
+    (appid: "com.valvesoftware.Steam", title: "Steam", enabled: false),
+]
+EOF
+```
+
+- 未完
+
+> Steam 取消浮动涉及 窗口浮动/平铺例外规则，RON 配置，热重载 \
+配置地址`~/.config/cosmic/com.system76.CosmicSettings.WindowRules/v1/tiling_exception_custom`
 
 ---
 
@@ -51,24 +63,29 @@ sudo flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
 
 ### 中文必备！
 
-- Fcitx5 & Rime —— 手感很好的中文输入法方案
+**Fcitx5 —— 手感好上手快可扩展的中文输入法方案**
+```bash
+sudo apt update
+sudo apt install -y fcitx5 fcitx5-frontend-gtk fcitx5-frontend-qt fcitx5-configtool fcitx5-rime fcitx5-chinese-addons
+```
+
 - Steam++ / Watt Toolkit —— 国内加速GitHub和Steam的不二之选
 
 ### 系统增强 *
 
-- Minimon Applet
-- Papyrus
+- Minimon Applet —— 顶栏状态监控组件
+- Papyrus / F —— 适用的动态壁纸
 
 ### 应用开发
 
-- VS Code
-- Opencode
-- 
+- VS Code —— 可扩展的代码编辑器
+- OpenCode —— AI Agent工具
+- OpenChamber —— 强大的OpenCode GUI
 
 ### 媒体娱乐
 
-- COSMIC Camera
-- Piliplus
-- Steam
-- OBS Studio
+- COSMIC Camera —— 支持扫描相机
+- Piliplus —— 第三方B站客户端
+- Steam —— 蒸汽游戏平台
+- OBS Studio —— 强大录屏软件
 
