@@ -6,6 +6,8 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
+_config.secret.yml
+google-key.json
 .idea/
 AGENTS.md
 /.omo
