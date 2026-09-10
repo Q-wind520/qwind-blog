@@ -19,12 +19,16 @@ nav:
 
 menu:
   首页: / || fas fa-home
-  歸档: /archives/ || fas fa-archive
+  归档: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
   友链: /link/ || fas fa-link
   关于: /about/ || fas fa-heart
   RSS订阅: /atom.xml || fas fa-rss-square
+
+# 归档页标题（#page-site-info 显示）。与上方 menu 的「归档」标签相互独立：
+# 菜单显示简体「归档」，此处显示繁体「歸檔」。由站点 scripts/archives-title.js 读取。
+archives_title: 歸檔
 
 # --------------------------------------
 # Code Blocks Settings 代码块
