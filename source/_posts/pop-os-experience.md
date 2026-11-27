@@ -1,8 +1,7 @@
 ---
-title: "Pop!_OS很好用！"
-date: 2026-8-7 23:52:45
-tags: [Linux, Pop!_OS, 使用体验]
-# top_img: /img/Pop-OSexp/pop-os%20logo.webp
+title: "Pop!_OS 很好用！"
+date: 2026-08-07 23:52:45
+tags: [Linux, Pop!_OS, 随记]
 cover: /img/Pop-OSexp/pop-os%20logo.webp
 cover_type: img
 ---

@@ -1,7 +1,7 @@
 ---
 title: "部署 QQ 机器人：AstrBot + NapCat 记录"
 date: 2026-11-12 12:00:00
-tags: [AI, Bot, QQ, Docker, 部署, 技术]
+tags: [AI, QQ, Docker, 教程]
 ---
 
 > **一句话部署提示词：** 用 Docker 部署 AstrBot + NapCat 并接通 OneBot v11.
